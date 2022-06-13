@@ -1,0 +1,63 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+
+  
+library(dplyr)
+library(mapview)
+
+```
+
+# UCRBSpatialTools
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of UCRBSpatialTools is to provide wrappers with convenient defaults around [sf](https://r-spatial.github.io/sf/) and links to Upper Colorado River Basin spatial data sets.  This spatial data is based on that available from the [STReaMS](https://streamsystem.org/index.php) website under *Help & Documentation > Resources > UCRB River Miles*
+
+## Installation
+
+You can install the development version of UCRBSpatialTools from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("cmichaud92/UCRBSpatialTools")
+```
+
+## Usage
+
+Researchers occasionally benefit from interactive exploration of spatial data. This package facilitates the process of converting coordinate strings or river miles to spatial locations to allow for rapid mapping. Some of the functions return maps, others return an sf dataframe. 
+
+## Examples
+
+### get_pts
+
+Fetch an sf dataframe containing river mile points on the green river between mile 120 and 97:
+
+```{r example-1}
+library(UCRBSpatialTools)
+get_pts(.where = "cd_rvr = 'GR'
+        AND rmi_nhd BETWEEN 120.5 AND 121")  |>  
+  knitr::kable()
+```
+This is useful in situations where you would like to visualize encounter locations provided in *river and river miles* on a map.
+
+### get_lns
+
+Fetch a linestring sf dataframe for the Green, Price and White rivers and map it
+
+```{r}
+get_lns(.where = "cd_rvr IN ('GR', 'PR', 'WH')") %>% 
+  mapview()
+```
+

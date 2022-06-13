@@ -3,12 +3,13 @@ Title: Quick tools for plotting and converting coordinates and river miles
 Version: 0.0.0.9000
 Authors@R:
   person("Christopher", "Michaud", , "christioher_michaud@fws.gov", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Description: This package contains functions to convert River and river mile to spatial coordinate pairs and Coordinate pairs to River and river mile. Some functions return sf dataframes which can be piped into mapview for rapid mapping while others return maps directly.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Imports: 
+    mapview,
     sf
 Suggests: 
     testthat (>= 3.0.0)
