@@ -3,4 +3,5 @@
 export(get_lns)
 export(get_pts)
 export(map_pts)
+export(map_rmi)
 export(map_rvr)
