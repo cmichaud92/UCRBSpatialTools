@@ -7,10 +7,12 @@
 arc_sf(.dsn, .query = NULL)
 }
 \arguments{
-\item{.query}{}
+\item{.dsn}{The path to the data resource (Living Atlas)}
+
+\item{.query}{Tne quoted query to subset data}
 }
 \value{
-
+a spatial data frame (sf)
 }
 \description{
 Title

@@ -1,9 +1,9 @@
 #' Title
 #'
-#' @param .dsn
-#' @param .query
+#' @param .dsn The path to the data resource (Living Atlas)
+#' @param .query Tne quoted query to subset data
 #'
-#' @return
+#' @return a spatial data frame (sf)
 #' @export
 #'
 #' @examples
